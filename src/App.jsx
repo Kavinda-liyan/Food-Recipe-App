@@ -1,10 +1,12 @@
-
+import Home from "./Pages/Home"
+import "./Style.css"
 
 function App() {
 
 
   return (
     <>
+    <Home/>
       
     </>
   )

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+    --color-souporange-100: #ffa031;
+    --color-souporange-200:#ed7e00;
+    --color-soupwhite-100:#f8f7ff;
+    --color-soupblue-100:#0544b9;
+    --border-rounded-xs:1rem;
+    
+}
