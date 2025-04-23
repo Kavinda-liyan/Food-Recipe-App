@@ -1,3 +1,4 @@
+import MidNavigation from "./Components/Navigation/MidNavigation"
 import Home from "./Pages/Home"
 
 import RecipeHeader from "./Pages/RecipeHeader"
@@ -12,6 +13,7 @@ function App() {
     <Wrapper>
       <Home/>
       <RecipeHeader/>
+      <MidNavigation/>
     </Wrapper>
     
       

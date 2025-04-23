@@ -19,7 +19,7 @@ const Navigation = () => {
         setTheme('Dark');
     }
   return (
-    <div className='p-2 shadow-sm z-10 h-1/12'>
+    <div className='p-2  z-10 h-1/12'>
         <div className='flex justify-between items-center'>
             {/* Dropdown and Logo */}
             

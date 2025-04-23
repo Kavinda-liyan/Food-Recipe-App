@@ -3,7 +3,7 @@ import banner from '../Assets/Banner.jpg'
 
 const MainBanner = () => {
   return (
-    <section className='h-11/12 px-2 mx-5'>
+    <section className='h-11/12 '>
         <div className='grid grid-cols-12 h-96'>
             <div className='col-span-7 h-96 overflow-hidden'>
                 <img className='w-full h-full' src={banner}></img>
