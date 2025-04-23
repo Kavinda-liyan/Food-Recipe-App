@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import Logo from '../Assets/Logo.png'
+import Logo from '../../Assets/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
 import NavWrapper from './NavWrapper'
-import DropdownNavigation from './DropdownNavigation'
+
 
 const Navigation = () => {
     const [inputSearch,setInputSearch]=useState('');
@@ -19,7 +19,7 @@ const Navigation = () => {
         setTheme('Dark');
     }
   return (
-    <div className='p-2 shadow-sm z-10'>
+    <div className='p-2 shadow-sm z-10 h-1/12'>
         <div className='flex justify-between items-center'>
             {/* Dropdown and Logo */}
             
@@ -44,10 +44,7 @@ const Navigation = () => {
 
             </NavWrapper>
 
-            {/* Food Categories */}
-            <NavWrapper>
-                <DropdownNavigation/>
-            </NavWrapper>
+          
             
 
             

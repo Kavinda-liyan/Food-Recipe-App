@@ -1,7 +1,7 @@
 import React from 'react'
-import Navigation from '../Components/Navigation'
-import DropdownNavigation from '../Components/DropdownNavigation'
+import Navigation from '../Components/Navigation/Navigation'
 import MainBanner from '../Components/MainBanner'
+
 
 const Home = () => {
   return (
