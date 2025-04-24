@@ -1,7 +1,6 @@
-import MidNavigation from "./Components/Navigation/MidNavigation"
+import Content from "./Pages/Content"
 import Home from "./Pages/Home"
 
-import RecipeHeader from "./Pages/RecipeHeader"
 import Wrapper from "./Pages/Wrapper"
 import "./Style.css"
 
@@ -12,8 +11,9 @@ function App() {
     <>
     <Wrapper>
       <Home/>
-      <RecipeHeader/>
-      <MidNavigation/>
+      <Content/>
+     
+      
     </Wrapper>
     
       

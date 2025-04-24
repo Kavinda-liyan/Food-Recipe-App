@@ -3,6 +3,7 @@ import Logo from '../../Assets/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
 import NavWrapper from './NavWrapper'
+import Navlinks from './Navlinks'
 
 
 const Navigation = () => {
@@ -19,28 +20,27 @@ const Navigation = () => {
         setTheme('Dark');
     }
   return (
-    <div className='p-2  z-10 h-1/12'>
+    <div className='p-2  z-10 min-h-1/12'>
         <div className='flex justify-between items-center'>
             {/* Dropdown and Logo */}
             
             <NavWrapper>
                 <img src={Logo} 
                 alt='Recipe for you Logo' 
-                className='h-12 mx-2'/>
+                className='h-12 '/>
 
             </NavWrapper>
                 
 
             {/* SearchBar */}
             <NavWrapper>
-                <input value={inputSearch} 
-                type='text' 
-                className='border-souporange-100 border-2 rounded-l-lg h-8 max-w-60' 
-                onChange={searchItems}/>
-                <button 
-                className='bg-souporange-100 h-8 w-8 rounded-r-lg hover:bg-souporange-200 hover:cursor-pointer'>
-                        <FontAwesomeIcon  icon={faSearch} className='text-soupwhite-100'/>
-                </button>
+                <ul className='flex gap-10 font-soupfont text-lg items-center'>
+                    <Navlinks Nav={"Home"}/>
+                    <Navlinks Nav={"Recipes"}/>
+                    <Navlinks Nav={"About us"}/>
+                    <Navlinks Nav={"Contact us"}/>
+                    
+                </ul>
 
             </NavWrapper>
 

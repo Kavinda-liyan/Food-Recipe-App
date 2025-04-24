@@ -2,7 +2,7 @@ import React from 'react'
 
 const Wrapper = ({children}) => {
   return (
-    <div className='my-0 mx-5 px-5 bg-soupwhite-100'>
+    <div className='my-0  bg-soupwhite-100'>
         {children}
     </div>
   )
