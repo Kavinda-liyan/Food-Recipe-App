@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import RecipeCard from '../Cards/RecipeCard'
 import axios from 'axios';
 
-const RecipeContent = ({selectedCuisine}) => {
+const RecipeContent = ({selectedCuisine,selectedCategory}) => {
     const [recipecuisie,setRecipecuisine]=useState([]);
     useEffect(()=>{
         const getByCuisine=async()=>{
@@ -18,16 +18,13 @@ const RecipeContent = ({selectedCuisine}) => {
             catch(error){
                 console.error("Data fetchinng incomplete",error);
                 setRecipecuisine([]);
-            }
-            
-            
-            
+            }   
         }
         if (selectedCuisine) getByCuisine();
     },[selectedCuisine]);
     
   return (
-    <section className=' h-11/12'>
+    <section className=' h-11/12 overflow-y-scroll'>
         <div className='grid grid-cols-4 gap-5 mx-10 py-5'>
             {recipecuisie.map((recipe)=>(
                 <RecipeCard key={recipe.idMeal} titleThumb={recipe.strMeal} imgThumb={recipe.strMealThumb}/>

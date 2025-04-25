@@ -4,7 +4,7 @@ import DropdownBtn from './DropdownBtn';
 import { faCaretDown, faCaretUp, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DropdownList from './DropdownList';
-const MidNavigation = ({oncuisineChange}) => {
+const MidNavigation = ({oncuisineChange,onCategoryChange}) => {
 
   const [country,setCountry]=useState([]);
   const [category,setCategory]=useState([]);
@@ -46,9 +46,6 @@ const MidNavigation = ({oncuisineChange}) => {
   },[]);
 
 
-  console.log("Country",country);
-  console.log(category);
-
   return (
     <section>
        <div className='h-1/12 p-2 bg-soupwhite-100 shadow-md flex items-center justify-center gap-10 font-soupfont'>
@@ -88,7 +85,7 @@ const MidNavigation = ({oncuisineChange}) => {
       {cuisinevisible && !categorievisible && (
         <div className='bg-soupwhite-200 shadow-md p-2 px-5 flex flex-wrap'>
           {country.map((cuisine) => (
-            <DropdownList key={cuisine.strArea} Droplinks={cuisine.strArea} onClick={()=>oncuisineChange(cuisine.strArea)} />
+            <DropdownList key={cuisine.strArea} Droplinks={cuisine.strArea} Click={()=>oncuisineChange(cuisine.strArea)} />
           ))}
         </div>
       )}
@@ -96,7 +93,7 @@ const MidNavigation = ({oncuisineChange}) => {
 {categorievisible && !cuisinevisible && (
   <div className='bg-soupwhite-200 shadow-md p-2 px-5 flex flex-wrap'>
     {category.map((category) => (
-      <DropdownList key={category.idCategory} Droplinks={category.strCategory} />
+      <DropdownList key={category.idCategory} Droplinks={category.strCategory} Click={()=>onCategoryChange(category.strCategory)} />
     ))}
   </div>
 )}

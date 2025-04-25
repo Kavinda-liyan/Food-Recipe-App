@@ -4,10 +4,11 @@ import RecipeContent from '../Components/Recipes/RecipeContent'
 
 const Content = () => {
   const [selectedCuisine,setSelectedCuisine]=useState('indian');
+  const [selectedCategory,setSelectedCategory]=useState('Chicken');
   return (
     <div className='h-screen'>
-        <MidNavigation oncuisineChange={setSelectedCuisine}/>
-        <RecipeContent selectedCuisine={selectedCuisine}/>
+        <MidNavigation oncuisineChange={setSelectedCuisine} onCategoryChange={setSelectedCategory}/>
+        <RecipeContent selectedCuisine={selectedCuisine} selectedCategory={selectedCategory}/>
     </div>
   )
 }
