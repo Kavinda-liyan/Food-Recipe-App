@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import DropdownNav from './DropdownNav'
 import axios from 'axios'
 import DropdownBtn from './DropdownBtn';
 import { faCaretDown, faCaretUp, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const MidNavigation = () => {
+import DropdownList from './DropdownList';
+const MidNavigation = ({oncuisineChange}) => {
 
   const [country,setCountry]=useState([]);
   const [category,setCategory]=useState([]);
@@ -50,7 +50,8 @@ const MidNavigation = () => {
   console.log(category);
 
   return (
-    <div className='h-16 p-2 bg-soupwhite-100 shadow-md flex items-center justify-center gap-10 font-soupfont'>
+    <section>
+       <div className='h-1/12 p-2 bg-soupwhite-100 shadow-md flex items-center justify-center gap-10 font-soupfont'>
       <div className='flex'>
       <DropdownBtn dropdownFunc={() => setCuisineVisible(prev => {
             const newState=!prev
@@ -58,12 +59,9 @@ const MidNavigation = () => {
             return newState;
           })} 
           visible1={cuisinevisible?'text-soupwhite-100 bg-souporange-100' :''} 
-          visible2={(cuisinevisible && !categorievisible) ? '' : 'hidden'}
           btnName={"Cuisine"}
           icon={cuisinevisible?faCaretUp:faCaretDown}>
-              {country.map((cuisine)=>(
-                <DropdownNav key={cuisine.strArea} Droplinks={cuisine.strArea}/>
-              ))}
+             
           </DropdownBtn>
 
           <DropdownBtn dropdownFunc={() => setCategorieVisible(prev => {
@@ -72,12 +70,9 @@ const MidNavigation = () => {
             return newState;
           })} 
           visible1={categorievisible?'text-soupwhite-100 bg-souporange-100' :''} 
-          visible2={categorievisible && !cuisinevisible ? '' : 'hidden'}
           btnName={"Category"}
           icon={categorievisible?faCaretUp:faCaretDown}>
-              {category.map((categorie)=>(
-                <DropdownNav key={categorie.idCategory} Droplinks={categorie.strCategory}/>
-              ))}
+             
           </DropdownBtn>
 
       </div>
@@ -87,9 +82,32 @@ const MidNavigation = () => {
 
       </div>
           
-          
-
     </div>
+    <div className={` shadow-md flex items-center justify-center gap-10 font-soupfont z-10 absolute`}>
+      <div className={'relative w-full '} >
+      {cuisinevisible && !categorievisible && (
+        <div className='bg-soupwhite-200 shadow-md p-2 px-5 flex flex-wrap'>
+          {country.map((cuisine) => (
+            <DropdownList key={cuisine.strArea} Droplinks={cuisine.strArea} onClick={()=>oncuisineChange(cuisine.strArea)} />
+          ))}
+        </div>
+      )}
+
+{categorievisible && !cuisinevisible && (
+  <div className='bg-soupwhite-200 shadow-md p-2 px-5 flex flex-wrap'>
+    {category.map((category) => (
+      <DropdownList key={category.idCategory} Droplinks={category.strCategory} />
+    ))}
+  </div>
+)}
+      </div>
+                    {/*  */}
+    </div>
+
+    </section>
+    
+   
+    
   )
 }
 
