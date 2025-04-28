@@ -5,7 +5,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const RecipeCard = ({imgThumb,titleThumb}) => {
   return (
-    <div className=' m-2 font-soupfont shadow-md rounded-md overflow-hidden border-2 border-soupblack-100/20 '>
+    <div className=' m-2 font-soupfont shadow-md rounded-md overflow-hidden border-2 border-soupblack-100/20 h-36'>
         <div className=' bg-soupwhite-200 shadow-md  h-36 relative'>
             
             <img src={imgThumb} alt={imgThumb} className='h-full w-full object-cover hover:scale-125 duration-500'></img>

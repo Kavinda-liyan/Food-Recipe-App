@@ -61,7 +61,7 @@ const MidNavigation = ({oncuisineChange,onCategoryChange}) => {
              
           </DropdownBtn>
 
-          <DropdownBtn dropdownFunc={() => setCategorieVisible(prev => {
+          {/* <DropdownBtn dropdownFunc={() => setCategorieVisible(prev => {
             const newState=!prev
             if(newState) setCuisineVisible(false);
             return newState;
@@ -70,11 +70,11 @@ const MidNavigation = ({oncuisineChange,onCategoryChange}) => {
           btnName={"Category"}
           icon={categorievisible?faCaretUp:faCaretDown}>
              
-          </DropdownBtn>
+          </DropdownBtn> */}
 
       </div>
       <div className='flex'>
-        <input type='text' className='w-96  border-soupblack-100 bg-soupblack-100/10 border-2 h-8 rounded-l-md'/>
+        <input type='text' className='w-44  border-soupblack-100 bg-soupblack-100/10 border-2 h-8 rounded-l-md'/>
         <button className='bg-soupblack-100 h-8 w-8 rounded-r-md focus-visible:border-0'><FontAwesomeIcon icon={faSearch} className='text-soupwhite-100'/></button>
 
       </div>
